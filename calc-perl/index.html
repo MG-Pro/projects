@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calc</title>
+</head>
+<body>
+<form action="calc.pl" method="get">
+    <input type="number" name="operand-1" value="0">
+    <br><br>
+    <label for="operate">Выберите операцию</label>
+    <select name="operate" id="operate">
+        <option value="add" selected>+</option>
+        <option value="sub">-</option>
+        <option value="mult">*</option>
+        <option value="div">/</option>
+    </select>
+    <br><br>
+    <input type="number" name="operand-2" value="0">
+    <br><br>
+    <hr>
+    <button>Вычислить</button>
+</form>
+</body>
+</html>
