@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  const getRandomColor = () => {
+    return '#'
+      + Math.floor((Math.random() * 2 ** 24))
+        .toString(16)
+        .padStart(6, '0')
+        .toUpperCase()
+  }
+  
+  const createTable = (root, rows, cols) => {
+    const table = document.createElement('table')
+    for(let i = 0; i < rows; i++) {
+      const row = createTableRow(cols)
+      table.appendChild(row)
+    }
+    table.style.borderCollapse = 'collapse'
+    root.appendChild(table)
+  }
+  
+  const createTableRow = (cells) => {
+    const row = document.createElement('tr')
+    for(let i = 0; i < cells; i++) {
+      const cell = createTableCell()
+      row.appendChild(cell)
+    }
+    row.style.height = '20px'
+    return row
+  }
+  
+  const createTableCell = () => {
+    const cell = document.createElement('td')
+    const color = getRandomColor()
+    cell.style.background = color
+    cell.style.padding = '3px'
+    cell.textContent = color
+    return cell
+  }
+  
+  createTable(document.body, 9, 9)
+
+</script>
+</body>
+</html>
